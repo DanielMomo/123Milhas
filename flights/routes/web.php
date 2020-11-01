@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FlightsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('flights',"Flights@all");
+Route::get('flights/list',[FlightsController::class,'list']);
+
+Route::get('flights/group',[FlightsController::class,'group']);
+
+Route::get('flights/order',[FlightsController::class,'order']);
